@@ -4,7 +4,7 @@ internal class Program1
 {
     private static void Main(string[] args)
     {
-        Calculadora miCalculadora = new Calculadora();
+        Calculadora miCalculadora = new Calculadora();//creo un objeto del tipo calculadora
         string? operacion;
         double numero;
         bool continuar = true;
