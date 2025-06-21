@@ -25,7 +25,15 @@ namespace Administracion
         private char estado_civil;
         private DateTime fecha_ingreso;
         private double sueldo_basico;
-        private Cargo cargo;
+        private Cargo cargos;
+
+        public string Nombre { get => nombre; }
+        public string Apellido { get => apellido; }
+        public DateTime Fecha_nacimiento { get => fecha_nacimiento; }
+        public char Estado_civil { get => estado_civil; }
+        public DateTime Fecha_ingreso { get => fecha_ingreso; }
+        public double Sueldo_basico { get => sueldo_basico; }
+        public Cargo Cargos { get => cargos;  }
 
         // constructor vacio (situarme seleccionando todos los datos ( ctrl.) y me genera el constructor)
         //defino los parametros
@@ -39,7 +47,7 @@ namespace Administracion
             this.estado_civil = estado_civil;
             this.fecha_ingreso = fecha_ingreso;
             this.sueldo_basico = sueldo_basico;
-            this.cargo = cargo; 
+            this.cargos = cargos; 
         }// me genera todos los parametros
          // nombres de los metodos publicos empiezan por mayuscula
         public int Antiguedad() // metodo equivalente a una funcion
@@ -91,14 +99,15 @@ namespace Administracion
             {
                 adicional = sueldo_basico * 0.25;
             }
-            if (cargo == Cargo.Ingeniero || cargo == Cargo.Especialista)
+            if (cargos == Cargo.Ingeniero || cargos == Cargo.Especialista)
             {
                 adicional = adicional * 0.50;
             }
-            if (estado_civil == 'c')
+            if (estado_civil == 'c' || estado_civil== 'C')
             {
                 adicional = adicional + 150000;
             }
+           
 
             return sueldo_basico + adicional;
         }
